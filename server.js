@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Star Wars Characters (DATA)
 // =============================================================
-var characters = [
+var tables = [
     {
         routeName: "yoda",
         name: "Yoda",
@@ -43,11 +43,15 @@ var characters = [
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+    res.sendFile(path.join(__dirname, "main.html"));
 });
 
 app.get("/add", function (req, res) {
     res.sendFile(path.join(__dirname, "add.html"));
+});
+
+app.get("/view", function (req, res) {
+    res.sendFile(path.join(__dirname, "view.html"));
 });
 
 // Displays all characters
